@@ -3,6 +3,8 @@ import 'package:flutter/rendering.dart';
 import 'section1.dart';
 import 'colors.dart';
 import 'section2.dart';
+import 'section3.dart';
+import 'section4.dart';
 
 
 void main() {
@@ -62,9 +64,9 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.white,
         leading: IconButton(onPressed: (){}, icon: Icon(Icons.menu,color: Colors.grey,)),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.message,color: Colors.grey,)),
+          IconButton(onPressed: (){}, icon: Icon(Icons.question_answer_outlined,color: Colors.grey,)),
           SizedBox(width: 1),
-          IconButton(onPressed: (){}, icon: Icon(Icons.ring_volume_outlined,color: Colors.grey,))
+          IconButton(onPressed: (){}, icon: Image.asset('assets/icons/img.png',width: 22,height: 22,))
         ],
       ),
       body: SafeArea(
@@ -72,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children:<Widget> [
               Container(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(5),
                   color: "#EEF3FD".toColor(),
                   child: first()
               ),
@@ -80,6 +82,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                   children: [
                     second(),
+                    scrollable(),
+                  ],
+                ),
+              ),
+              Container(
+                child: Column(
+                  children: [
+                    third(),
+                    scrollable1(),
+                  ],
+                ),
+              ),
+              Container(
+                child: Column(
+                  children: [
+                    fourth(),
+                    scrollable2()
                   ],
                 ),
               )
