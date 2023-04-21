@@ -1,6 +1,8 @@
 # learn
 
-Internship
+Basic Frontend of app based on the layout 
+
+Figma Link :- https://www.figma.com/file/5VHJ77tiYeZp8ICO6azVKr/Replica?node-id=1%3A577&t=VD0zAjJfezsYfacd-1
 
 ## Getting Started
 
