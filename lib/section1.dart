@@ -4,43 +4,38 @@ import 'package:learn/colors.dart';
 
 Color col = "#598BED".toColor();
 Widget first(){
-  return IntrinsicHeight(
+  return  SafeArea(
     child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children:  [
-          Padding(
-            padding:EdgeInsets.only(
-              top: 20,
-              left: 10,
-              right: 70,
-            ),
-            child: Text("Hello,Priya !",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 30,fontFamily: 'Lora'),),
-          ),
-          Padding(
-            padding:EdgeInsets.all(10),
-            child: Text(
-              "What do you wanna learn today ?",
-              style: TextStyle(
-                  fontFamily:'Inter',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 15,
-                  color: Colors.grey
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:  [
+             Text(
+               "Hello,Priya !",
+               style: TextStyle(fontWeight: FontWeight.w700,fontSize: 30,fontFamily: 'Lora'),
+               textAlign: TextAlign.start,),
+            SizedBox(height: 5,),
+            Text(
+                "What do you wanna learn today ?",
+                style: TextStyle(
+                    fontFamily:'Inter',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 15,
+                    color: Colors.grey
+                ),
               ),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(6),
-            child: Column(
-              children: [
-                cards1(),
-                cards2()
-              ],
-            ),
-          )
-        ]
-    ),
+            SizedBox(height: 10,),
 
+            Container(
+                child: options())
+          ]
+      ),
+  );
+}
+Widget options(){
+  return Column(
+    children: [
+      cards1(),
+      cards2()
+    ],
   );
 }
 Widget cards1(){

@@ -5,17 +5,21 @@ import 'package:flutter/rendering.dart';
 Widget fourth(){
   return IntrinsicHeight(
     child: Container(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.only(top: 20,left: 10,right: 10,bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Row(
             children: [
-              Text("Lessons for you", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),),
+              Text("Lessons for you", style: TextStyle(fontFamily: 'Lora',fontWeight: FontWeight.w500, fontSize: 20),),
               Spacer(),
-              Text("View all"),
-              Icon(Icons.arrow_forward_rounded),
+              Text("View all",style: TextStyle(
+                  fontFamily: 'Inter',
+                  color: Colors.grey,
+                  fontSize: 12
+              ),),
+              Icon(Icons.arrow_forward_rounded,size: 16,color: Colors.grey,),
             ],
           ),
         ],
@@ -64,8 +68,9 @@ Widget scrollable2(){
                       Text(
                         "Understanding of human behaviour",
                         style: TextStyle(
+                          fontFamily: 'Inter',
                           fontSize: 20,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                       SizedBox(height: 20,),
@@ -74,8 +79,9 @@ Widget scrollable2(){
                           Text(
                             "3 min",
                             style: TextStyle(
+                                fontFamily: 'Inter',
                                 fontSize: 13,
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w500,
                                 color: Colors.grey
                             ),
                           ),
@@ -83,20 +89,12 @@ Widget scrollable2(){
                           SizedBox(
                             width: 70,
                             height: 25,
-                            child: Icon(Icons.lock_open_sharp),
+                            child: Image.asset('assets/images/lock.png',width: 15,height: 15,),
                           ),
 
 
                         ],
                       )
-                      /*Text(
-                        "16 lessons",
-                        style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w800,
-                            color: Colors.grey
-                        ),
-                      ),*/
                     ],
                   ),
                 ),
@@ -138,8 +136,9 @@ Widget scrollable2(){
                       Text(
                         "Understanding of human behaviour",
                         style: TextStyle(
+                          fontFamily: 'Inter',
                           fontSize: 20,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                       SizedBox(height: 20,),
@@ -148,8 +147,9 @@ Widget scrollable2(){
                           Text(
                             "3 min",
                             style: TextStyle(
+                                fontFamily: 'Inter',
                                 fontSize: 13,
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w500,
                                 color: Colors.grey
                             ),
                           ),
@@ -157,20 +157,12 @@ Widget scrollable2(){
                           SizedBox(
                             width: 70,
                             height: 25,
-                            child: Icon(Icons.lock_open_sharp),
+                            child: Image.asset('assets/images/lock.png',width: 15,height: 15,),
                           ),
 
 
                         ],
                       )
-                      /*Text(
-                        "16 lessons",
-                        style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w800,
-                            color: Colors.grey
-                        ),
-                      ),*/
                     ],
                   ),
                 ),
