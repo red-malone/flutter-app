@@ -1,16 +1,15 @@
 # learn
 
-Internship
+Basic Frontend of app based on the layout 
+
+Figma Link :- https://www.figma.com/file/5VHJ77tiYeZp8ICO6azVKr/Replica?node-id=1%3A577&t=VD0zAjJfezsYfacd-1
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Basic Layout 
 
-A few resources to get you started if this is your first Flutter project:
+![device-2023-04-21-194522](https://user-images.githubusercontent.com/96327578/233660275-8e683de7-10a8-4e35-a23e-0464f5acb411.gif)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
