@@ -7,7 +7,6 @@ import 'package:learn/services/remote_services.dart';
 import 'section1.dart';
 import 'colors.dart';
 import 'section3.dart';
-import 'section4.dart';
 
 
 void main() {
@@ -66,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState(){
     super.initState();
     getData();
+    getstudy();
 
   }
   getData() async{
@@ -115,11 +115,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   five(),
                   Container(
-                    height: 300,
+                    height: 330,
                     width: 450,
                     child: Visibility(
                       visible: isLoaded,
-                      child: ListView.builder(scrollDirection: Axis.horizontal,itemCount: programs?.length,itemBuilder: (context ,index){
+                      child: ListView.builder(shrinkWrap: true,scrollDirection: Axis.horizontal,itemCount: programs?.length,itemBuilder: (context ,index){
                             return Container(
                               child:Card(
                                 elevation: 2,
@@ -131,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                                 child: SizedBox(
                                   width: 270,
-                                  height: 270,
+                                  height: 290,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,25 +205,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
-              /*
-              Container(
-                child: Column(
-                  children: [
-                    fourth(),
-                    scrollable2()
-                  ],
-                ),
-              ),*/
               Column(
                 children: [
                   six(),
-                  Visibility(
+                  Container(
+                    height: 340,
+                    width: 450,
+                    child: Visibility(
                       visible: load,
-                      child: ListView.builder(scrollDirection: Axis.horizontal,itemCount: lessons?.length,itemBuilder: (context,index){
+                      child: ListView.builder(shrinkWrap: true,scrollDirection: Axis.horizontal,itemCount: lessons?.length,itemBuilder: (context ,index){
                         return Container(
-                          height: 320,
-                          width: 450,
-                          child: Card(
+                          child:Card(
                             elevation: 2,
                             shape: RoundedRectangleBorder(
                                 side: BorderSide(
@@ -232,8 +224,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 borderRadius: BorderRadius.all(Radius.circular(12))
                             ),
                             child: SizedBox(
-                              width: 270,
-                              height: 290,
+                              width: 280,
+                              height: 320,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -248,25 +240,38 @@ class _MyHomePageState extends State<MyHomePage> {
                                         Text(
                                           lessons![index].category,
                                           style: TextStyle(
+                                              fontFamily: 'Inter',
                                               fontSize: 15,
-                                              fontWeight: FontWeight.w600,
+                                              fontWeight: FontWeight.w700,
                                               color: Colors.blueAccent
                                           ),
                                         ),
-                                        SizedBox(height: 5,),
+                                        SizedBox(height: 10,),
                                         Text(
-                                          "Understanding of human behaviour",
+                                          lessons![index].name,
                                           style: TextStyle(
                                             fontFamily: 'Inter',
                                             fontSize: 20,
                                             fontWeight: FontWeight.w700,
                                           ),
                                         ),
-                                        SizedBox(height: 20,),
+                                        SizedBox(height: 10,),
+                                        Text(
+                                          "Created at ${lessons![index].createdAt}",
+                                          style: TextStyle(
+                                              fontFamily: 'Inter',
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.grey
+                                          ),
+                                        ),
+                                        SizedBox(height: 10,),
                                         Row(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              "3 min",
+                                              "${lessons![index].duration} min",
                                               style: TextStyle(
                                                   fontFamily: 'Inter',
                                                   fontSize: 13,
@@ -276,12 +281,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                             ),
                                             Spacer(),
                                             SizedBox(
-                                              width: 70,
+                                              width: 80,
                                               height: 25,
-                                              child: Image.asset('assets/images/lock.png',width: 15,height: 15,),
+                                              child: lock(lessons![index].locked),
                                             ),
-
-
                                           ],
                                         )
                                       ],
@@ -291,15 +294,15 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
-
                         );
-
-                  }
+                      }),
+                      replacement: const Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                    ),
                   ),
-                  ),
-
                 ],
-              )
+              ),
 
             ],
           ),
@@ -334,6 +337,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ]),
     );
   }
+}
+
+Widget lock(bool bool){
+      if(bool){
+        return Image.asset('assets/images/lock.png',width: 25,height: 15,color: Colors.grey,);
+      }
+      else{
+        return Image.asset('assets/images/unlock.png',width: 25,height: 15,color: Colors.grey,);
+      }
 }
 
 //first section bar
