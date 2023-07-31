@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:learn/colors.dart';
 
 Color col = "#598BED".toColor();
-Widget first(){
+Widget first(BuildContext context){
   return  SafeArea(
     child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,22 +24,22 @@ Widget first(){
               ),
             SizedBox(height: 10,),
 
-            Container(
-                child: options())
+            Center(child: options(context))
           ]
       ),
   );
 }
-Widget options(){
+Widget options(BuildContext context){
   return Column(
     children: [
-      cards1(),
-      cards2()
+      cards1(context),
+      cards2(context)
     ],
   );
 }
-Widget cards1(){
+Widget cards1(BuildContext context){
   return  Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Card(
           shape: RoundedRectangleBorder(
@@ -49,7 +49,7 @@ Widget cards1(){
               borderRadius: BorderRadius.all(Radius.circular(12))
           ),
           child:SizedBox(
-            width: 160,
+            width: MediaQuery.of(context).size.width/2.5,
             height: 48,
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +70,7 @@ Widget cards1(){
               borderRadius: BorderRadius.all(Radius.circular(12))
           ),
           child:SizedBox(
-            width: 160,
+            width: MediaQuery.of(context).size.width/2.5,
             height: 48,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -86,8 +86,9 @@ Widget cards1(){
       ],
     );
 }
-Widget cards2(){
+Widget cards2(BuildContext context){
   return  Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Card(
           shape: RoundedRectangleBorder(
@@ -97,7 +98,7 @@ Widget cards2(){
               borderRadius: BorderRadius.all(Radius.circular(12))
           ),
           child:SizedBox(
-            width: 160,
+            width: MediaQuery.of(context).size.width/2.5,
             height: 48,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -118,7 +119,7 @@ Widget cards2(){
               borderRadius: BorderRadius.all(Radius.circular(12))
           ),
           child:SizedBox(
-            width: 160,
+            width: MediaQuery.of(context).size.width/2.5,
             height: 48,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

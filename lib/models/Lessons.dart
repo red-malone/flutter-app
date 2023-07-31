@@ -15,7 +15,6 @@ class Lessons {
     required this.count,
     required this.anyKey,
   });
-
   String requestId;
   List<Items> items;
   int count;
